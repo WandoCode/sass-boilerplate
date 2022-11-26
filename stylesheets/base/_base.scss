@@ -1,6 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
+@use '../abstracts/' as *;
 
 /**
  * Set up a decent box model on the root element
@@ -25,11 +26,11 @@ html {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: $clr-primary-400;
   text-decoration: none;
 
   @include on-event {
-    color: $text-color;
+    color: $clr-primary-500;
     text-decoration: underline;
   }
 }
