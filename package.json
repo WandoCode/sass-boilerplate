@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "sass": "sass stylesheets/main.scss dist/main.css"
+  },
   "devDependencies": {
     "sass": "^1.56.1"
   }
