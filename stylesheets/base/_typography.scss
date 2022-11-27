@@ -4,6 +4,7 @@
 @use '../abstracts/' as *;
 
 body {
-  color: var(--clr-primary-400);
-  font: normal 125% / 1.4 $text-font-stack;
+  color: var(--clr-neutral-400);
+  font-family: $text-font-stack;
+  font-size: var(--fs-sm-300);
 }

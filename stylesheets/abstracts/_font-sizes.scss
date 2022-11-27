@@ -1,7 +1,7 @@
 @use './mixins' as *;
 
 $scale: (
-  small: (
+  sm: (
     300: 1rem,
     400: 1.125rem,
     500: 1.563rem,
@@ -9,7 +9,7 @@ $scale: (
     700: 2.441rem,
     800: 3.052rem,
   ),
-  large: (
+  lg: (
     300: 1rem,
     400: 1.425rem,
     500: 2rem,
@@ -26,17 +26,12 @@ $scale: (
   /// ==> clamp(valFixMinEnREM, valFixEnREMPlusValEnVW, valFixMaxEnREM)
   /// ==> valFixMinEnREM sont les valeur pour 'small' et valFixMaxEnREM sont les valeurs pour 'large'
   @each $screen-size, $font-size in $scale {
-    @if $screen-size == small {
-      @each $size, $value in $font-size {
-        --fs-#{$size}: #{$value};
-      }
-    } @else {
-      @each $size, $value in $font-size {
-        // Includes a media-query to make font bigger above de 'small' breakpoint
-        @include breakpoint(small) {
-          --fs-#{$size}: #{$value};
-        }
-      }
+    @each $size, $value in $font-size {
+      --fs-#{$screen-size}-#{$size}: #{$value};
     }
+  }
+
+  @each $name, $value in $weights {
+    --fw-#{$name}: #{$value};
   }
 }
