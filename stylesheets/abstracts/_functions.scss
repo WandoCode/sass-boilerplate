@@ -1,6 +1,7 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass functions.
 // -----------------------------------------------------------------------------
+@use 'sass:math';
 
 @function rem($pixel) {
   @if math.is-unitless($pixel) {
