@@ -10,6 +10,19 @@
   }
 }
 
+@mixin breakpoint-down($key) {
+  $size: map-get($breakpoints, $key);
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin on-hover {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
 /// Event wrapper
 /// @author Harry Roberts
 /// @param {Bool} $self [false] - Whether or not to include current selector
