@@ -45,6 +45,16 @@ $weights: (
     }
   }
 
+  @each $screen-size, $font-size in $scale {
+    @each $font-key, $font-value in $font-size {
+      .fs-#{$font-key} {
+        @if $screen-size == 'sm' {
+          font-size: var(--fs-#{$font-key});
+        }
+      }
+    }
+  }
+
   @each $name, $value in $weights {
     --fw-#{$name}: #{$value};
   }
