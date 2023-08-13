@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 @use 'sass:math';
 
-@function rem($pixel) {
+@function in-rem($pixel) {
   @if math.is-unitless($pixel) {
     @return math.div($pixel, 16) + rem;
   } @else {
